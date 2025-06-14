@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "zaifer-mcp"
+version = "0.1.0"
+description = "Zaif暗号資産取引所のAPIをModel Context Protocol (MCP)経由で直接利用可能にするサーバー"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Yusuke Oya", email = "curio@antique-cafe.net"}
+]
+urls = {Homepage = "https://github.com/curio184/zaifer-mcp"}
+keywords = ["zaif", "zaifapi", "zaif-exchange", "trade", "bot", "mcp", "claude", "anthropic"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10"
+]
+dependencies = [
+    "mcp>=0.5.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.25.0"
+]
+
+[project.scripts]
+zaifer-mcp = "zaifer_mcp.__main__:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.0.0",
+    "mypy>=1.0.0",
+    "build>=0.10.0",
+    "twine>=4.0.0"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["zaifer_mcp"]
+include = [
+    "LICENSE",
+    "README.md"
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
