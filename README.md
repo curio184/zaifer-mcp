@@ -6,6 +6,10 @@
 
 Zaif暗号資産取引所のAPIを[Model Context Protocol (MCP)](https://modelcontextprotocol.io/)経由で利用可能にするPythonライブラリです。ClaudeなどのLLMアシスタントから自然言語でZaif APIの機能を直接呼び出せます。
 
+<a href="https://glama.ai/mcp/servers/@curio184/zaifer-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@curio184/zaifer-mcp/badge" alt="Zaifer-MCP MCP server" />
+</a>
+
 ## ⚠️ 重要な注意事項
 
 **本アプリケーションは非公式・非公認のサードパーティ製ツールです。**
